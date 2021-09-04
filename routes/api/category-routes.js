@@ -41,11 +41,32 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update a category by its `id` value
+  try {
+    Category.update(
+      {
+        // all the requirements for the Category file in this bracket.
+        // BECAUSE ID IS AUTO_INCREMENT; WE ARE NOT ALLOWING THIS TO BE UPDATED.
+        category_name: req.params.category_name,       
+      },
+      {
+        where: {
+          id: req.params.id,
+        }
+      }
+    )
+    .then((updatedCategory) => {
+      // Sends the updated category as a json response
+      res.json(updatedCategory);
+    })
+    .catch((err) => res.json(err));
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
     const categoryData = await Category.destroy({
@@ -58,7 +79,6 @@ router.delete('/:id', (req, res) => {
       res.status(404).json({ message: 'No Category found with this id!' });
       return;
     }
-
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
