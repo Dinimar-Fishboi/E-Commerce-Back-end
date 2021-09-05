@@ -48,11 +48,11 @@ router.put('/:id', async (req, res) => {
       {
         // all the requirements for the Category file in this bracket.
         // BECAUSE ID IS AUTO_INCREMENT; WE ARE NOT ALLOWING THIS TO BE UPDATED.
-        category_name: req.params.category_name,       
+        category_name: req.body.category_name,       
       },
       {
         where: {
-          id: req.params.id,
+          id: req.body.id,
         }
       }
     )
