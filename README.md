@@ -14,6 +14,7 @@ The Back-End uses an Express.js API and uses Sequelize to interact with MySQL. T
 - [Usage](#usage)
 - [Tests](#tests)
 - [Questions](#questions)
+- [Issues](#issues)
 - [License](#license-and-copyright)
 
 ## Installation
