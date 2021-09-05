@@ -26,7 +26,9 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const tagData = await Tag.findByPk(req.params.id, {
-      include: [{ model: Product}] //, through: ProductTag, as: 'product_codes'}]
+      include: [{ 
+        model: Product,
+      }] //, through: ProductTag, as: 'product_codes'}]
     })
 
      res.status(200).json(tagData);
@@ -45,21 +47,14 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id',  (req, res) => {
   // update a tag's name by its `id` value
   try {
-    Tag.update(
-      {
-        // all the requirements for the Tag file in this bracket.
-        // BECAUSE ID IS AUTO_INCREMENT; WE ARE NOT ALLOWING THIS TO BE UPDATED.
-        tag_name: req.params.tag_name,       
-      },
-      {
+    Tag.update( req.body,{
         where: {
           id: req.params.id,
         }
-      }
-    )
+      })
     .then((updatedTag) => {
       // Sends the updated tag as a json response
       res.json(updatedTag);
