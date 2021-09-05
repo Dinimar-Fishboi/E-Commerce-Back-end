@@ -8,6 +8,11 @@ The Back-End uses an Express.js API and uses Sequelize to interact with MySQL. T
 
 ## Deployed Link and Screenshots
 
+[Video Link](https://vimeo.com/598202471)
+
+![Screen Shot 2021-09-05 at 20 39 53](https://user-images.githubusercontent.com/83541287/132123884-b268ddb5-b413-491b-bb66-d201bea5f37e.png)
+
+
 ## Table of Contents 
 - [Technologies](#technologies)
 - [Installation](#installation)
@@ -38,7 +43,7 @@ For unknown reasons, a 400 error code arises when running a PUT function. Howeve
 If you have any questions, please reach out.
 
 - [https://github.com/Dinimar-Fishboi](https://github.com/Dinimar-Fishboi)
-- [dev.fish.studio@protonmail.com](#dev.fish.studio@protonmail.com)
+- [dev.fish.studio@protonmail.com](dev.fish.studio@protonmail.com)
 
 ## License and Copyright
 
